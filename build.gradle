@@ -1,6 +1,3 @@
-apply(plugin: "eclipse")
-apply(plugin: "idea")
-
 buildscript({
     repositories {
         mavenCentral()
@@ -10,6 +7,13 @@ buildscript({
     }
 })
 
+plugins {
+    id 'net.researchgate.release' version '2.6.0'
+}
+
+apply(plugin: "eclipse")
+apply(plugin: "idea")
+
 group = "com.arfath.surveyapp"
 version = "1.0.0-SNAPSHOT"
 
@@ -17,7 +21,7 @@ allprojects {
     group = project.group
     version = project.version
 
-    apply plugin: 'java'
+    apply(plugin: 'java')
     apply(plugin: "org.springframework.boot")
     apply(plugin: "io.spring.dependency-management")
 
@@ -31,7 +35,7 @@ allprojects {
 }
 
 springBoot {
-    mainClassName = "com.arfath.surveyapp.web.Boot"
+    mainClassName = "com.arfath.surveyapp.boot.Boot"
 }
 
 dependencies {
