@@ -1,4 +1,4 @@
-package com.arfath.surveyapp.web;
+package com.arfath.surveyapp.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
