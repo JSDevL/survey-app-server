@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"com.arfath.surveyapp.repository"})
-@ComponentScan(basePackages = {"com.arfath.surveyapp.controller"})
+@ComponentScan(basePackages = {"com.arfath.surveyapp.boot", "com.arfath.surveyapp.controller"})
 @EntityScan("com.arfath.surveyapp.domain")
 public class Boot {
     public static void main(String[] args) {

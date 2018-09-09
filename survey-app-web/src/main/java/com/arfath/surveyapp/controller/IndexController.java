@@ -20,8 +20,6 @@ public class IndexController {
 
     @GetMapping(path = "/")
     public List<AppUser> getAppUsers() {
-        this.appUserRepository.save(new AppUser("Arfath", "Ahmed", "arfath.7920@gmail.com"));
-
         return this.appUserRepository.findAll();
     }
 

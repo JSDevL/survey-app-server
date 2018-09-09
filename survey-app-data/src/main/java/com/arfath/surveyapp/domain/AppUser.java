@@ -18,6 +18,9 @@ public class AppUser {
     @Column(name = "email")
     private String email;
 
+    public AppUser() {
+    }
+
     public AppUser(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
