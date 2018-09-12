@@ -1,21 +1,21 @@
 package com.arfath.surveyapp.boot.bootstrap;
 
-import com.arfath.surveyapp.domain.AppUser;
-import com.arfath.surveyapp.repository.AppUserRepository;
+import com.arfath.surveyapp.domain.User;
+import com.arfath.surveyapp.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private AppUserRepository appUserRepository;
+    private UserRepository userRepository;
 
-    public DataLoader(AppUserRepository appUserRepository) {
-        this.appUserRepository = appUserRepository;
+    public DataLoader(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
-        this.appUserRepository.save(new AppUser("Arfath", "Ahmed", "arfath.7920@gmail.com"));
+        this.userRepository.save(new User("Arfath", "Ahmed", "arfath.7920@gmail.com"));
     }
 }

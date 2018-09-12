@@ -1,26 +1,24 @@
 package com.arfath.surveyapp.controller;
 
-import com.arfath.surveyapp.domain.AppUser;
-import com.arfath.surveyapp.repository.AppUserRepository;
+import com.arfath.surveyapp.domain.User;
+import com.arfath.surveyapp.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class IndexController {
 
-    private AppUserRepository appUserRepository;
+    private UserRepository userRepository;
 
-    public IndexController(AppUserRepository appUserRepository) {
-        this.appUserRepository = appUserRepository;
+    public IndexController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @GetMapping(path = "/")
-    public List<AppUser> getAppUsers() {
-        return this.appUserRepository.findAll();
+    public List<User> getAppUsers() {
+        return this.userRepository.findAll();
     }
 
 }
