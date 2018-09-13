@@ -1,4 +1,4 @@
-package com.arfath.surveyapp.domain;
+package com.arfath.surveyapp.data.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

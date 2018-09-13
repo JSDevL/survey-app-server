@@ -1,7 +1,7 @@
-package com.arfath.surveyapp.controller;
+package com.arfath.surveyapp.web.controller;
 
-import com.arfath.surveyapp.domain.User;
-import com.arfath.surveyapp.repository.UserRepository;
+import com.arfath.surveyapp.data.domain.User;
+import com.arfath.surveyapp.data.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

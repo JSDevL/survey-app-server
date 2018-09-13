@@ -11,6 +11,10 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
+ext {
+    swaggerVersion = "2.7.0"
+}
+
 apply(plugin: "eclipse")
 apply(plugin: "idea")
 

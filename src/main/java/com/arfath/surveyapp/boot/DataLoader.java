@@ -1,7 +1,7 @@
-package com.arfath.surveyapp.boot.bootstrap;
+package com.arfath.surveyapp.boot;
 
-import com.arfath.surveyapp.domain.User;
-import com.arfath.surveyapp.repository.UserRepository;
+import com.arfath.surveyapp.data.domain.User;
+import com.arfath.surveyapp.data.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

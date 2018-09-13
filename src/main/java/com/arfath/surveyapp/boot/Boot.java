@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = {"com.arfath.surveyapp.repository"})
-@ComponentScan(basePackages = {"com.arfath.surveyapp.boot", "com.arfath.surveyapp.controller"})
-@EntityScan("com.arfath.surveyapp.domain")
+@EnableJpaRepositories(basePackages = {"com.arfath.surveyapp.data.repository"})
+@ComponentScan(basePackages = {"com.arfath.surveyapp.boot", "com.arfath.surveyapp.web"})
+@EntityScan("com.arfath.surveyapp.data.domain")
 public class Boot {
     public static void main(String[] args) {
         SpringApplication.run(Boot.class);
