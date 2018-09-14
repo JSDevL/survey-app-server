@@ -1,34 +1,35 @@
 package com.arfath.surveyapp.data.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Table(name = "app_user")
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+@AllArgsConstructor
+@Builder
+public class User extends BaseEntity {
 
-    @Column(name = "first_name")
+    @Column(unique = true, nullable = false)
+    private String userName;
+
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(nullable = false)
     private String email;
 
-    public User(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
+    @Column(nullable = false)
+    private String password;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    private Collection<Role> roles;
 }
