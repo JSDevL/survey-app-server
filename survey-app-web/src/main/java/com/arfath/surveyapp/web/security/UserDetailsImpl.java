@@ -2,6 +2,7 @@ package com.arfath.surveyapp.web.security;
 
 import com.arfath.surveyapp.data.domain.Role;
 import com.arfath.surveyapp.data.domain.User;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,15 +11,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-
 public class UserDetailsImpl extends User implements UserDetails {
 
     public UserDetailsImpl(User user) {
-        super(user.getUserName(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getRoles());
-    }
-
-    public UserDetailsImpl(String userName, String firstName, String lastName, String email, String password, ArrayList<Role> roles) {
-        super(userName, firstName, lastName, email, password, roles);
+        super(user.getId(), user.getCreatedLocalDateTime(), user.getUpdatedLocalDateTime(), user.getUserName(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getRoles());
     }
 
     @Override

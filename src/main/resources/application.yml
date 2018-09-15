@@ -3,3 +3,7 @@ server:
 spring:
   profiles:
     active: dev
+app:
+  jwt:
+    secret: "MySecret"
+    expirationInMs: 500000

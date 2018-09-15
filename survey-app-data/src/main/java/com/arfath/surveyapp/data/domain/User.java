@@ -3,6 +3,7 @@ package com.arfath.surveyapp.data.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -10,9 +11,8 @@ import java.util.Collection;
 @Table(name = "app_user")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class User extends BaseEntity {
 
     @Column(unique = true, nullable = false)
@@ -32,4 +32,14 @@ public class User extends BaseEntity {
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private Collection<Role> roles;
+
+    public User(Long id, LocalDateTime createdLocalDateTime, LocalDateTime updatedLocalDateTime, String userName, String firstName, String lastName, String email, String password, Collection<Role> roles) {
+        super(id, createdLocalDateTime, updatedLocalDateTime);
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }
