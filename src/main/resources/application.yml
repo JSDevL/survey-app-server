@@ -3,6 +3,9 @@ server:
 spring:
   profiles:
     active: dev
+  jpa:
+    hibernate:
+      ddl-auto: validate
 app:
   jwt:
     secret: "MySecret"

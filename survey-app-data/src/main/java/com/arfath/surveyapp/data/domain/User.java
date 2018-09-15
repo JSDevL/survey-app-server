@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -14,19 +13,19 @@ import java.util.Collection;
 @ToString
 @NoArgsConstructor
 public class User extends BaseEntity {
-
-    @Column(unique = true, nullable = false)
+    @Column(name = "user_name", unique = true, nullable = false)
     private String userName;
 
-    @Column(nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
